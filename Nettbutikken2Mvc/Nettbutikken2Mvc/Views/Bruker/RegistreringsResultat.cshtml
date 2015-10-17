@@ -1,0 +1,28 @@
+﻿@model List<Nettbutikken2Mvc.Models.dbKunde>
+
+@{
+    ViewBag.Title = "RegistreringResultat";
+}
+
+<h2>Registreringsresultat:</h2>
+
+@if(Session["Bruker"] != null){
+    foreach (var kunde in Model)
+    {
+        if (kunde.Kundenummer == ((Nettbutikken2Mvc.Models.dbKunde)Session["Bruker"]).Kundenummer)
+        {
+            <table>
+                <tr>
+                    <td>@kunde.Kundenummer+" - "</td>
+                    <td>@kunde.Fornavn</td>
+                    <td>@kunde.Etternavn</td>
+                    <td>@kunde.Adresse</td>
+
+
+                </tr>
+               
+            </table>
+        }
+    }
+}
+else{<p>Det er allerede registrert en kunde på den Epost-adressen.</p>}
