@@ -104,7 +104,7 @@ namespace Nettbutikken2Mvc.Controllers
                         nyKunde.Fornavn = innListe["Fornavn"];
                         nyKunde.Etternavn = innListe["Etternavn"];
                         nyKunde.Adresse = innListe["Adresse"];
-                        nyKunde.Telefonnummer = innListe["Telefonnummer"];
+                        nyKunde.Telefonnummer = int.Parse(innListe["Telefonnummer"]);
                         nyKunde.Epost = innListe["Epost"];
                         if (innListe["Passord"].Equals(innListe["PassordKopi"]))
                         {
@@ -136,9 +136,13 @@ namespace Nettbutikken2Mvc.Controllers
                             db.Kunder.Add(nyKunde);
                        
                             Session["Bruker"] = nyKunde;
-                          
+                            db.SaveChanges();
                         }
-                        db.SaveChanges();
+                        else if(funnetPoststed== null)
+                        {
+                            db.SaveChanges();
+                        }
+                        
                         return RedirectToAction("RegistreringsResultat");
 
 

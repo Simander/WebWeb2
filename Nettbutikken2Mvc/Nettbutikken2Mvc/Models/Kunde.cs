@@ -56,7 +56,7 @@ namespace Nettbutikken2Mvc.Models
         public int Kundenummer { get; set; }
         public string Fornavn { get; set; }
         public string Etternavn { get; set; }
-        public string Telefonnummer { get; set; }
+        public int Telefonnummer { get; set; }
         public string Adresse { get; set; }
         public dbPoststed Poststed { get; set; }
         public string Epost { get; set; }
@@ -66,8 +66,9 @@ namespace Nettbutikken2Mvc.Models
     public class dbPoststed
     {
         [Key]
-        public string Poststed { get; set; }
         public string Postnummer { get; set; }
+        public string Poststed { get; set; }
+        
     }
 
    
