@@ -1,0 +1,20 @@
+﻿@model List<Nettbutikken2Mvc.Models.dbVareKategori>
+
+@{
+    ViewBag.Title = "listKategorier";
+}
+
+<h2>listKategorier</h2>
+@foreach (var kategori in Model)
+{
+<table>
+    <tr>
+        <td>@kategori.KategoriID</td>
+        <td>@kategori.Navn</td>
+
+
+    </tr>
+
+</table>
+}
+

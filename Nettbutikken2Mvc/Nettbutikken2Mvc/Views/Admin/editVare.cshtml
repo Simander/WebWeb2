@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Nettbutikken2Mvc.Models.dbVare>
+
+@{
+    ViewBag.Title = "editVare";
+}
+
+<h2>editVare</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.KategoriID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Navn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kvantitet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pris)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Produsent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.beskrivelse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VareBildeUrl)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.KategoriID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Navn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.kvantitet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pris)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Produsent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.beskrivelse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VareBildeUrl)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.VareID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.VareID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.VareID })
+        </td>
+    </tr>
+}
+
+</table>

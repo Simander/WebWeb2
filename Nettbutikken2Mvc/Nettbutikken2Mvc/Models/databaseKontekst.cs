@@ -19,9 +19,10 @@ namespace Nettbutikken2Mvc.Models
 
             public DbSet<dbKunde> Kunder { get; set; }
             public DbSet<dbPoststed> Poststeder { get; set; }
-            public DbSet<dbVare> Varer { get; set; }
 
-            public DbSet<dbVareKategori> VareKategori {get;set;}
+
+            public DbSet<dbVare> Varer { get; set; }
+            public DbSet<dbVareKategori> VareKategorier {get;set;}
 
             protected override void OnModelCreating(DbModelBuilder modelBuilder)
             {

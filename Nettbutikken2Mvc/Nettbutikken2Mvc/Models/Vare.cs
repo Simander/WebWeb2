@@ -5,6 +5,7 @@ using System.Web;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Nettbutikken2Mvc.Models
 {
@@ -25,9 +26,9 @@ namespace Nettbutikken2Mvc.Models
     public class dbVare
     {
         [Key]
-        public int Varenummer { get; set; }
-
-        public dbVareKategori Kategori { get; set; }
+        public int VareID { get; set; }
+        public string KategoriID { get; set; }
+        public virtual dbVareKategori Kategori { get; set; }
         public string Navn { get; set; }
         public int kvantitet { get; set; }
         public decimal Pris { get; set; }
@@ -41,9 +42,9 @@ namespace Nettbutikken2Mvc.Models
     public class dbVareKategori
     {
         [Key]
-        public string KategoriID { get; set; }
+        public string KategoriID { get; set; }      
+      
         public string Navn { get; set; }
+        public virtual List<dbVare> Varer { get; set; }
     }
-
-
 }
