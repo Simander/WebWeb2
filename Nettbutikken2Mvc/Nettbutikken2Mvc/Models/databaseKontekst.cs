@@ -12,17 +12,18 @@ namespace Nettbutikken2Mvc.Models
         public class DatabaseContext : DbContext
         {
             public DatabaseContext()
-                : base("name=butikkDatabase")
+                : base("name=ButikkDatabase")
             {
                 Database.CreateIfNotExists();
+
             }
 
             public DbSet<dbKunde> Kunder { get; set; }
             public DbSet<dbPoststed> Poststeder { get; set; }
 
 
-            public DbSet<dbVare> Varer { get; set; }
-            public DbSet<dbVareKategori> VareKategorier {get;set;}
+            public DbSet<dbVare> Vare { get; set; }
+            //public DbSet<dbVareKategori> VareKategorier {get;set;}
 
             protected override void OnModelCreating(DbModelBuilder modelBuilder)
             {

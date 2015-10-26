@@ -150,6 +150,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AdminVareController.cs" />
     <Compile Include="Controllers\BrukerController.cs" />
     <Compile Include="Controllers\ButikkController.cs" />
     <Compile Include="Controllers\ButikksjefController.cs" />
@@ -162,7 +163,6 @@
     <Compile Include="Models\Kunde.cs" />
     <Compile Include="Models\Logikk.cs" />
     <Compile Include="Models\Vare.cs" />
-    <Compile Include="Models\VareDbAksess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -180,6 +180,11 @@
     <Content Include="Views\Admin\addKategoriToDB.cshtml" />
     <Content Include="Views\Admin\listKategorier.cshtml" />
     <Content Include="Views\Admin\editVare.cshtml" />
+    <Content Include="Views\AdminVare\Create.cshtml" />
+    <Content Include="Views\AdminVare\Delete.cshtml" />
+    <Content Include="Views\AdminVare\Details.cshtml" />
+    <Content Include="Views\AdminVare\Edit.cshtml" />
+    <Content Include="Views\AdminVare\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

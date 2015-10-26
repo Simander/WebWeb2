@@ -19,32 +19,35 @@ namespace Nettbutikken2Mvc.Models
         public int kvantitet { get; set; }
         public string Pris { get; set; }
         public string Produsent { get; set; }
+
+        internal static IQueryable<dbVare> Where(Func<object, bool> p)
+        {
+            throw new NotImplementedException();
+        }
+
         public string beskrivelse { get; set; }
 
         public string VareBildeUrl { get; set; }
     }
     public class dbVare
     {
-        [Key]
+       [Key]
         public int VareID { get; set; }
-        public string KategoriID { get; set; }
-        public virtual dbVareKategori Kategori { get; set; }
+        public int VareNr  { get; set; }
+        public string KategoriNavn { get; set; }
         public string Navn { get; set; }
-        public int kvantitet { get; set; }
+        public string Beskrivelse { get; set; }
         public decimal Pris { get; set; }
 
-        public string Produsent { get; set; }
-        public string beskrivelse { get; set; }
-        
+        public int AntallPaLager {get; set; }
+       
         public string VareBildeUrl { get; set; }
     }
 
-    public class dbVareKategori
+    
+
+    public class VareDatabaseContext : DbContext
     {
-        [Key]
-        public string KategoriID { get; set; }      
-      
-        public string Navn { get; set; }
-        public virtual List<dbVare> Varer { get; set; }
+        public DbSet<dbVare> vare { get; set; }
     }
 }

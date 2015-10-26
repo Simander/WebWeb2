@@ -1,0 +1,74 @@
+﻿@model Nettbutikken2Mvc.Models.dbVare
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>dbVare</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VareNr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VareNr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KategoriNavn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KategoriNavn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Navn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Navn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Beskrivelse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Beskrivelse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pris)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pris)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AntallPaLager)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AntallPaLager)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VareBildeUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VareBildeUrl)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VareID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

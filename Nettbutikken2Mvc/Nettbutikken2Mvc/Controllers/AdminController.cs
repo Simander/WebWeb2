@@ -33,21 +33,21 @@ namespace Nettbutikken2Mvc.Controllers
         {
             return View();
         }
-        [HttpPost]
-        public ActionResult addKategoriToDB(FormCollection innListe)
-        {
-            bool sattInn = VareDbAksess.addKategori(innListe["Navn"]);
-            if(sattInn == true)
-            {
-                RedirectToAction("listKategorier");
-            }
-            return View();
-        }
-        public ActionResult listKategorier()
-        {
-            var db = new Models.DatabaseContext();
-            List<Models.dbVareKategori> listeAvKategorier = db.VareKategorier.ToList();
-            return View(listeAvKategorier);
-        }
+    //    [HttpPost]
+    //    public ActionResult addKategoriToDB(FormCollection innListe)
+    //    {
+    //        bool sattInn = VareDbAksess.addKategori(innListe["Navn"]);
+    //        if(sattInn == true)
+    //        {
+    //            RedirectToAction("listKategorier");
+    //        }
+    //        return View();
+    //    }
+    //    public ActionResult listKategorier()
+    //    {
+    //        var db = new Models.DatabaseContext();
+    //        List<Models.dbVareKategori> listeAvKategorier = db.VareKategorier.ToList();
+    //        return View(listeAvKategorier);
+    //    }
     }
 }

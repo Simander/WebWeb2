@@ -1,0 +1,80 @@
+﻿@model Nettbutikken2Mvc.Models.dbVare
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>dbVare</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VareNr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VareNr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KategoriNavn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KategoriNavn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Navn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Navn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Beskrivelse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Beskrivelse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pris)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pris)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AntallPaLager)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AntallPaLager)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VareBildeUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VareBildeUrl)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

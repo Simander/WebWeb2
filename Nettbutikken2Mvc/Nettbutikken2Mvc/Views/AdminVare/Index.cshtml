@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Nettbutikken2Mvc.Models.dbVare>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+    @using (Html.BeginForm("Index", "vare", FormMethod.Get))
+    {
+    <p>
+        KategoriNavn: @Html.DropDownList("vareKategori", "All")
+        Navn: @Html.TextBox("SearchString") <br />
+        <input type="submit" value="SøkeFelt" />
+    </p>
+    }
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VareNr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KategoriNavn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Navn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Beskrivelse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pris)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AntallPaLager)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VareBildeUrl)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.VareNr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KategoriNavn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Navn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Beskrivelse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pris)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AntallPaLager)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VareBildeUrl)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.VareID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.VareID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.VareID })
+        </td>
+    </tr>
+}
+
+</table>
